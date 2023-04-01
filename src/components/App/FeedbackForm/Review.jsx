@@ -21,10 +21,13 @@ function Review() {
 
     return (<>
         <h1>Review Your Feedback</h1>
-        <div>Feeling: {feedback.feeling}</div>
-        <div>Understanding: {feedback.understanding}</div>
-        <div>Supported: {feedback.supported}</div>
-        <div>Comments: {feedback.comment}</div>
+        <div><b>Feeling:</b> {feedback.feeling}</div>
+        <br />
+        <div><b>Understanding:</b> {feedback.understanding}</div>
+        <br />
+        <div><b>Supported:</b> {feedback.support}</div>
+        <br />
+        <div><b>Comments:</b> {feedback.comment}</div>
         <br />
         <button onClick={handleSubmit}>Submit Feedback</button>
     </>)

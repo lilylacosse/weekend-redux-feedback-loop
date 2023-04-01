@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@fontsource/roboto": "^4.5.8",
     "@mui/material": "^5.11.15",
     "axios": "^0.21.1",
     "express": "^4.17.1",
@@ -16,7 +17,8 @@
     "react-router-dom": "^5.3.4",
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
