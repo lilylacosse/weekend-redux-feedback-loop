@@ -1,6 +1,8 @@
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom"
 
 function Success() {
+    const dispatch = useDispatch();
     const history = useHistory();
 
     function handleClick() {

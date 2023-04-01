@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function Supported() {
-    const [supported, setSupported] = useState('')
+    const [support, setSupported] = useState('')
 
     const dispatch = useDispatch()
     const history = useHistory();
@@ -11,7 +11,7 @@ function Supported() {
     function saveSupported() {
         dispatch({
             type: 'SAVE_FEEDBACK',
-            payload: { supported }
+            payload: { support }
         })
 
         history.push("/comments")
