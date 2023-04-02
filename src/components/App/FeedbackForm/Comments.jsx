@@ -4,10 +4,10 @@ import { useHistory } from "react-router-dom";
 import Card from '@mui/material/Card'
 import CardContent from "@mui/material/CardContent";
 import { TextField, Button } from "@mui/material";
-import swal from 'sweetalert';
+
 
 function Comments() {
-    const [comment, setComment] = useState('')
+    const [comments, setComment] = useState('')
 
     const dispatch = useDispatch()
     const history = useHistory();
@@ -15,7 +15,7 @@ function Comments() {
     function saveComment() {
         dispatch({
             type: 'SAVE_FEEDBACK',
-            payload: { comment }
+            payload: { comments }
         })
 
         history.push("/review")
@@ -27,8 +27,6 @@ function Comments() {
         <TextField variant='outlined' sx={{ width: '90%' }} label='Please leave a few words!' onChange={(event) => setComment(event.target.value)} />
         <br />
         <Button sx={{ marginTop: 2, marginBottom: 3 }} variant='contained' onClick={saveComment}>Next</Button>
-
-
     </Card>
 
     </>)

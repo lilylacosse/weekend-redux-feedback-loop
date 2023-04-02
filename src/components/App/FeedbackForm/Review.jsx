@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import Card from '@mui/material/Card'
+import CardContent from "@mui/material/CardContent";
+import { Button } from "@mui/material";
 
 function Review() {
     const feedback = useSelector((store) => store.feedback)
-    const dispatch = useDispatch();
-    const history = useHistory()
+    const history = useHistory();
     // Post
     function handleSubmit() {
         axios.post("/feedback", feedback)
@@ -19,17 +19,20 @@ function Review() {
         history.push('/success')
     }
 
-    return (<>
-        <h1>Review Your Feedback</h1>
-        <div><b>Feeling:</b> {feedback.feeling}</div>
+    return (<><Card variant="outlined" sx={{ maxWidth: 750, margin: '0 auto' }}>
+        <CardContent>
+            <h1>Review Your Feedback</h1>
+            <div><b>Feeling:</b> {feedback.feeling}</div>
+            <br />
+            <div><b>Understanding:</b> {feedback.understanding}</div>
+            <br />
+            <div><b>Supported:</b> {feedback.support}</div>
+            <br />
+            <div><b>Comments:</b> {feedback.comments}</div>
+        </CardContent>
         <br />
-        <div><b>Understanding:</b> {feedback.understanding}</div>
-        <br />
-        <div><b>Supported:</b> {feedback.support}</div>
-        <br />
-        <div><b>Comments:</b> {feedback.comment}</div>
-        <br />
-        <button onClick={handleSubmit}>Submit Feedback</button>
+        <Button sx={{ marginTop: 2, marginBottom: 3 }} variant='contained' onClick={handleSubmit}>Submit Feedback</Button>
+    </Card>
     </>)
 }
 
